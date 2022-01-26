@@ -42,10 +42,8 @@ late double screenWidth, screenHeight, resWidth;
       rowcount = 1;
     }else{
       resWidth = screenWidth*0.75;
-      rowcount = 5;
+      rowcount = 2;
     }
-    final double itemHeight = screenHeight / 5;
-    final double itemWidth = resWidth + 0.15;
 
     return Scaffold(
       appBar: AppBar(
@@ -117,11 +115,11 @@ late double screenWidth, screenHeight, resWidth;
                               ),
                      )) ],
                           ),
-                          SizedBox(height: resWidth*0.05),
+                  SizedBox(height: resWidth*0.05),
                   Expanded(
                     child: GridView.count(
                     crossAxisCount: rowcount,
-                    childAspectRatio: (itemWidth / itemHeight),
+                    childAspectRatio: (resWidth / screenHeight*4.5),
                     controller: _scrollController,
                     children: List.generate(scrollcount, (index) {
                     return Padding(
